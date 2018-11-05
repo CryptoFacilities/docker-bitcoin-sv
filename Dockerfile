@@ -15,4 +15,4 @@ RUN useradd -m bitcoin
 USER bitcoin
 COPY --from=builder /bitcoin-sv-${BSV_VERSION}/bin/bitcoind /bin/bitcoind
 RUN mkdir -p /home/bitcoin/.bitcoin
-CMD ["bitcoind","-printtoconsole"]
+ENTRYPOINT ["bitcoind"]
